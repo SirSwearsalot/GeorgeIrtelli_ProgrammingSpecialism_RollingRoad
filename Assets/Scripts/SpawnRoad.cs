@@ -38,8 +38,17 @@ public class SpawnRoad : MonoBehaviour
 
         RoadCount++;
 
-        if (RoadCount < RoadLength)
+        if (transform.childCount < RoadLength)
             CreateNewSegment();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Destroy(transform.GetChild(0).gameObject);
+            CreateNewSegment();
+        }
     }
 
     //private void OnDrawGizmos()
