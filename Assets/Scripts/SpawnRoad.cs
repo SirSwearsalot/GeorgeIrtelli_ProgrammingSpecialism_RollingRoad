@@ -42,13 +42,12 @@ public class SpawnRoad : MonoBehaviour
             CreateNewSegment();
     }
 
-    private void Update()
+    public void DestroySegment()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Destroy(transform.GetChild(0).gameObject);
-            CreateNewSegment();
-        }
+
+        Destroy(transform.GetChild(0).gameObject);
+        CreateNewSegment();
+
     }
 
     //private void OnDrawGizmos()
